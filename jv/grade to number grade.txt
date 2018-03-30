@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Grade
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter a letter grade: ");
+        String grade = in.next().toUpperCase();
+
+        double num_grade;
+
+        switch (grade)
+        {
+            case "A":
+            case "A+":
+                num_grade = 4;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "A-":
+                num_grade = 4 - 0.3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "B":
+                num_grade = 3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "B+":
+                num_grade = 3 + 0.3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "B-":
+                num_grade = 3 - 0.3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "C":
+                num_grade = 2;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "C-":
+                num_grade = 2 - 0.3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "C+":
+                num_grade = 2 + 0.3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "D":
+                num_grade = 1;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "D+":
+                num_grade = 1 + 0.3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "D-":
+                num_grade = 1 - 0.3;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "F":
+                num_grade = 0;
+                System.out.println("Grade " + grade + " equals " + num_grade);
+                break;
+            case "F+":
+            case "F-":
+                System.out.println("There is no F+ or F-");
+                break;
+            default:
+                System.out.println("Inalid input");
+        }
+    }
+}

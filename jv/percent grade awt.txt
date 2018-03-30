@@ -1,0 +1,39 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.JSpinner;
+import javax.swing.plaf.basic.DefaultMenuLayout;
+public class calgrade extends Frame implements ActionListener{
+    Label l1,l2;
+    Button b1;
+    TextField t;
+    
+    calgrade(){
+        setLayout(new FlowLayout());
+    l1=new Label("Enter Marks % ");
+    l2=new Label("");
+    b1=new Button("Calculate Grade");
+    b1.addActionListener(this);
+    t=new TextField(10);
+     
+    add(l1);add(t);
+    add(b1);add(l2);
+    setSize(200,200);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+     if(e.getSource()==b1){
+     String a=t.getText();
+     if(Integer.parseInt(a)>=60){l2.setText("Grade A++");}
+     else if(Integer.parseInt(a)>=45&&Integer.parseInt(a)<60){l2.setText("Grade B");}
+     else if(Integer.parseInt(a)>=33&&Integer.parseInt(a)<45){l2.setText("Grade C");}
+     else{l2.setText("Grade F");}
+     }
+    }
+    
+    public static void main(String[] args) {
+        new calgrade();
+    }
+    
+}

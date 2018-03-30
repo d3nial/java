@@ -1,0 +1,76 @@
+package awtmouselistner;
+import java.awt.*;
+import java.awt.Event.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+public class Awtmouselistner extends Frame implements MouseListener,MouseMotionListener{
+     
+    Label l;
+    
+    public Awtmouselistner()
+            
+            {
+        setSize(500, 500);
+        setVisible(true);
+        setLayout(new FlowLayout());
+        
+        addMouseListener(this);
+        addMouseMotionListener(this);
+        
+        l=new Label("             ");
+        add(l);
+                
+    
+            }
+
+    public static void main(String[] args) {
+        new Awtmouselistner();
+
+        
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        l.setText("MOUSE IS CLICKED");
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        l.setText("MOUSE IS PRESSED");
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        l.setText("MOUSE IS RELEASESD");
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        l.setText("MOUSE IS ENTERED");
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        l.setText("MOUSE IS EXITED");
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+
+        l.setText("MOUSE IS DRAGGED");
+    }
+
+    @Override
+
+     public void mouseMoved(MouseEvent e) {
+       l.setText("MOUSE IS MOVED");
+
+    }
+    
+}

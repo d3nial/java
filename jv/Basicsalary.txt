@@ -1,0 +1,53 @@
+package basicsalary;
+
+import java.util.Scanner;
+
+public class Basicsalary {
+    
+    public void getsalary()
+    {
+        Scanner sc =new Scanner(System.in);
+        
+        
+        
+        System.out.println("Enter Name");
+        String name=sc.nextLine();
+        System.out.println("Enter Salary");
+        Double salary=sc.nextDouble();
+        
+        if(salary<3000)
+        {
+            double newsalary=(salary/100)*2;
+            System.out.println("netsalary"+(salary+newsalary));
+        }
+        else if(salary>=3000&&salary<5000)
+        {
+            double newsalary=(salary/100)*5;
+            System.out.println("netsalary"+(salary+newsalary));
+            
+        }
+        else if(salary>=5000&&salary<10000)
+        {
+            double newsalary=(salary/100)*10;
+            System.out.println("netsalary"+(salary+newsalary));
+            
+        }
+        else 
+        {
+            double newsalary=(salary/100)*20;
+            System.out.println("netsalary"+(salary+newsalary));
+            
+        }
+    }
+//    public void calculate()
+//    {
+//        
+//    }
+    public static void main(String[] args) {
+        Basicsalary obj=new Basicsalary();
+        obj.getsalary();
+
+        
+    }
+    
+}

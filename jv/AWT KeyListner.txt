@@ -1,0 +1,56 @@
+package awtkeylistner;
+import java.awt.*;
+import java.awt.Event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+
+public class Awtkeylistner extends Frame implements KeyListener{
+    
+    
+    
+    TextArea t;
+    Label l;
+    
+    public Awtkeylistner()
+    {
+        setSize(500, 500);
+        setVisible(true);
+        setLayout(new FlowLayout());
+        
+        
+        l=new Label("                                             ");
+        t=new TextArea(1, 1);
+        t.addKeyListener(this);
+        
+        add(l);
+        add(t);
+        
+
+    }
+
+    public static void main(String[] args) {
+        new Awtkeylistner();
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        l.setText("KEY IS TYPED");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        l.setText("KEY IS PRESSED");
+        
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        l.setText("KEY IS RELEASED");
+        
+    }
+    
+}

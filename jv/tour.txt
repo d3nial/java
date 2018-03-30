@@ -1,0 +1,87 @@
+
+public class tour {
+	private String tcode;
+	private int noa,nok,k;
+	private float tf;
+	private int ch;
+	
+	tour(int n,int  p, int r){
+		this.noa=n;
+		this.nok=p;
+		this.k=r;
+		
+	}
+	
+	public int assignfare(int s)
+	{
+		
+		this.ch=s;
+		
+		
+		if (ch>=1000) {
+			tf=noa*500+nok*250;
+		}
+		else if (1000<ch && ch>=500) {
+			tf=noa*300+nok*150;
+		}
+		
+	//	else (ch<500){
+		//		tf=noa*200+nok*100;
+				
+				
+			//}
+			
+		
+		
+			
+		
+		
+		
+		
+		return (int) tf;
+		
+		
+		
+	}
+	
+	public void displaydata()
+	{
+		System.out.println("\n number of adults:"+noa);
+		System.out.println("\n number of kids:"+nok);
+		System.out.println("\n number of kilometers:"+k);
+		System.out.println("\n total fare="+tf);
+		
+	}
+	
+
+}
+
+___________________________________________
+
+
+import java.util.Scanner;
+
+public class Cons {
+	public static void main(String agrs[]) {
+		int na,nk,k,tf;
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("enter number of adults:");
+		na=sc.nextInt();
+		
+		System.out.println("enter number of kids");
+		nk=sc.nextInt();
+		
+		System.out.println("enter number of kilometers:");
+		k=sc.nextInt();
+		
+		tour t=new tour(na,nk,k);
+		t.assignfare(k);
+		t.displaydata();
+		
+		
+		
+		
+	}
+
+}

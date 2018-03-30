@@ -1,0 +1,40 @@
+
+package calci;
+
+
+public class cozalozawoza {
+    
+    public static void main(String[] args) {
+        cozalozawoza aCozaLozaWoza = new cozalozawoza();
+        aCozaLozaWoza.printcozalozawoza(110,11);
+    }
+
+    private void printcozalozawoza(int itemsCount, int itemsPerLine)
+    {
+        boolean clwFlag;
+        for (int i = 1; i <= itemsCount; i++) {
+            clwFlag = false;
+            if (i % 3 == 0) {
+                System.out.print("Coza");
+                clwFlag = true;
+            }
+            if (i % 5 == 0) {
+                System.out.print("Losa");
+                clwFlag = true;
+            }
+            if (i % 7 == 0) {
+                System.out.print("Woza");
+                clwFlag = true;
+            }            
+            if ( ! clwFlag) {
+                System.out.print(i);
+            }
+            System.out.print(" ");
+            
+            if (i % 11 == 0) {
+                System.out.println();
+            }          
+        }
+        System.out.println();        
+    }
+}

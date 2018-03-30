@@ -1,0 +1,78 @@
+
+
+
+import java.util.Scanner;
+public class banksys{
+    Scanner s=new Scanner(System.in);
+    int accno;
+    double currbal=500d,withamm,depamm;
+    String name;
+    public void disp(){
+        System.out.println("enter account number : ");
+        accno=s.nextInt();
+        System.out.println("hello, your current balance is : "+currbal);
+    }
+    public void withdraw(){
+        double tot;
+        System.out.println("enter account number : ");
+        accno=s.nextInt();
+        System.out.println("enter amount : ");
+        withamm=s.nextDouble();
+        if(withamm>currbal)
+        {
+        System.out.println("insuffuicient bal");
+        System.out.println("current balance : "+currbal);
+        }
+        else
+        {
+            tot=(currbal-withamm);
+            System.out.println("current balance : "+tot);
+        }
+        
+    }
+    public void dep(){
+        double tot;
+        System.out.println("enter account number : ");
+        accno=s.nextInt();
+        System.out.println("enter amount : ");
+        depamm=s.nextDouble();
+        tot=currbal+depamm;
+        System.out.println("current balance : "+tot);
+    }   
+    public static void main(String[] args) {
+        banksys bs=new banksys();
+        Scanner s=new Scanner(System.in);
+        int ch,chc,i=1;
+        String acctype,a="current account",b="saving account";
+        //while(1){
+        System.out.println("Account type\n1."+a+"\n2."+b);
+        System.out.println("enter account type : ");
+        chc=s.nextInt();
+        switch(chc){
+            case 1:
+                acctype=a;
+                break;
+            case 2:
+                acctype=b;break;
+            default:System.out.println("inavalid");
+        }
+        System.out.println("welcome to Abc bank.\n1.withdraw\n2.deposit\n3.display balance.");
+        System.out.println("enter choice : ");
+        ch=s.nextInt();
+        switch(ch){
+            case 1:
+                bs.withdraw();
+                break;
+            case 2:
+                bs.dep();
+                break;
+            case 3:
+                bs.disp();
+                break;
+            default:
+                System.out.println("invalid!");
+                
+        }
+    }
+    
+}
